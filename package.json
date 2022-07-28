@@ -1,0 +1,22 @@
+{
+  "name": "assingment2_1",
+  "version": "1.0.1",
+  "description": "Robbie Blackshaw Assingemnt For MusoPlan",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RJBlackshaw/Assingment2_1.git"
+  },
+  "author": "Robbie Blackshaw",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RJBlackshaw/Assingment2_1/issues"
+  },
+  "homepage": "https://github.com/RJBlackshaw/Assingment2_1#readme",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}
