@@ -1,65 +1,67 @@
-//initializes prompt feature into program
 const ps=require('prompt-sync');
 const prompt=ps();
 
-//import the functions from the mPFunctions.js file
 let musoFunctions = require('./mPFunctions.js');
 
-//sets error value to false so when menu is called it doesn't display the inbuilt error message
 let error = false;
 
 //while loop used to always show menu
 while(true){
     //calls the menu and passes invalid input status to the function.
-    //also sets the function result as choice variable to be used in the switch statement
     choice = parseInt(musoFunctions.mainMenu(error));
-
-    //sets the error message back to false after the menu is called.
     error = false;
 
+    //switch that takes the user choice and executes the correct functions based on their decision
     switch(choice) {
         case 1:
-            console.log("You've chosen option 1 - Register a Musician")
-
+            musoFunctions.regMusician();
             continue;
 
         case 2:
-            console.log("You've chosen option 2 - Create a troupe")
+            console.log('--------------------------------------------');
+            console.log("\nYou've chosen option 2 - Create a troupe")
 
             continue;
 
         case 3:
-            console.log("You've chosen option 3 - Add Musician to troupe")
+            console.log('--------------------------------------------');
+            console.log("\nYou've chosen option 3 - Add Musician to troupe")
 
             continue;
 
         case 4:
-            console.log("You've chosen option 4 - Summary description of troupe")
+            console.log('--------------------------------------------');
+            console.log("\nYou've chosen option 4 - Summary description of troupe")
 
             continue;
 
         case 5:
-            console.log("You've chosen option 5 - Detailed description of troupe")
+            console.log('--------------------------------------------');
+            console.log("\nYou've chosen option 5 - Detailed description of troupe")
 
             continue; 
 
         case 6:
-            console.log("You've chosen option 6 - Troupe cost calulation")
+            console.log('--------------------------------------------');
+            console.log("\nYou've chosen option 6 - Troupe cost calulation")
 
             continue;
 
         case 7:
-            console.log("You've chosen option 7 - Export troupe names to file")
+            console.log('--------------------------------------------');
+            console.log("\nYou've chosen option 7 - Export troupe names to file")
 
             continue;
 
         case 8:
-            console.log("You've chosen option 8 - You've chosen option 8")
+            console.log('--------------------------------------------');
+            console.log("\nYou've chosen option 8 - Export troupe details to file")
 
             continue;
 
          case 9:
-            console.log("You've chosen option 9 - Exit MusoPlan")
+            console.log('--------------------------------------------');
+            console.log("\nYou've chosen option 9 - Exit MusoPlan")
 
             break;
 
