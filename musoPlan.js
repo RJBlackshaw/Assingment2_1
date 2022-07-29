@@ -18,9 +18,7 @@ while(true){
             continue;
 
         case 2:
-            console.log('--------------------------------------------');
-            console.log("\nYou've chosen option 2 - Create a troupe")
-
+            musoFunctions.createTroupe();
             continue;
 
         case 3:
