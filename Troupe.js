@@ -39,6 +39,13 @@ class Troupe{
     get genre(){
         return this.genre_
     }
+
+    tMembers = new Array();
+
+    addMusician(musician){
+        this.tMembers.push(musician)
+        console.log(`\n${musician.musicianName} has been added to ${this.troupeName}.`)
+    }
 }
 
 module.exports={Troupe};
