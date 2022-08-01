@@ -190,4 +190,188 @@ function createTroupe(){
     return
 }
 
-module.exports={mainMenu, regMusician, createTroupe};
+//Loop that lists the names of all instances in troupe List.
+//returns a boolean depending on success.
+function listTroupes (){
+    if(TroupeList.length == 0){
+        let list2Error = true
+        return list2Error
+    } else {
+        console.log(`\nThe available Troupes in the system are:`);
+        let list2Error = false
+        for(let i=0; i < TroupeList.length;i++){
+            console.log(`- ${TroupeList[i].troupeName}`);
+        }
+        return list2Error = false
+    }
+}
+
+//Loop that lists the names of all instances in Musician List.
+//returns a boolean depending on success.
+function listMusicians (){
+    if(MusicianList.length == 0){
+        let list1Error = true;
+        return list1Error = true
+    } else {
+        console.log(`\nThe available musicians in the system are:`);
+        let list1Error = false
+        for(let i=0; i < MusicianList.length;i++){
+            console.log(`- ${MusicianList[i].musicianName}`);
+        }
+        console.log('')
+        return list1Error = false
+    }
+}
+
+//If any of the previous functions returned nothing, This function will show correct error message
+//otherwise itll do nothing.
+
+function listError(list1Error, list2Error){
+    if (list1Error == true && list2Error == true){
+         console.log(`\nThere are no Musicians or Troupes registered in the system.`)
+         return;
+    }
+    if (list1Error == true){
+        console.log('\nThere are no Musicians registered in the system.')
+        return;
+    }
+    if(list2Error== true){
+        console.log(`\nThere are no Troupes registered in the system.`);
+        return;
+    }
+
+}
+
+
+function addMusicianToTroupe(){
+    //stops the function if a list is empty.
+    if(MusicianList.length == 0 || TroupeList.length == 0){
+        return
+    } 
+    let Trou = 0;
+
+    //while loop for continuous prompting on fail.
+    while(true){
+        if(Trou != 0){
+            break;
+        } else {
+            troupe_name=prompt('Enter Troupe name: ').trim();
+
+            for(let i=0; i < TroupeList.length; i++){
+                    if(TroupeList[i].troupeName == troupe_name){
+                        Trou = TroupeList[i]
+                    }
+                }
+
+            //if previous loop fails to find a match, below statement will trigger
+            if( Trou == 0){
+                console.log(`\nNo Troupe Name found under ${troupe_name}.`);
+            };
+        }
+    }
+
+    let mus = 0
+    console.log('')
+
+    //while loop for continuous prompting on fail.
+    while(true){
+        if(mus != 0){
+            break;
+        } else {
+            musiName = prompt(`Type musician name to be added to ${troupe_name} :`).trim();
+
+            for(let i=0; i < MusicianList.length; i++){
+                if(MusicianList[i].musicianName == musiName){
+                    mus = MusicianList[i];
+                }
+            }
+
+            //if previous loop fails to find a match, below statement will trigger
+            if(mus == 0){
+                console.log(`\nNo Musician Name found under ${musiName}.`);
+            };
+        }
+    }
+    
+    //calls the Troupe instance method addMusician and pushes the musician to the array
+    Trou.addMusician(mus)
+}
+
+//Hidden presets. enter 11 on first menu to register entries below.
+function Hardcode (){
+    var musi = new Guitarist();
+            musi.instrument='Guitarist';
+            musi.musicianName='Robert Blackshaw'
+            musi.experience=12
+            musi.hourlyRate=75
+            MusicianList.push(musi)
+
+            var musi = new Bassist();
+            musi.instrument='Bassist';
+            musi.musicianName='Emma Nickel'
+            musi.experience=15
+            musi.hourlyRate=85
+            MusicianList.push(musi)
+
+            var musi = new Percussionist();
+            musi.instrument='Percussionist';
+            musi.musicianName='Hayden Cooper'
+            musi.experience=5
+            musi.hourlyRate=50
+            MusicianList.push(musi)
+
+            var musi = new Flautist();
+            musi.instrument='Flautist';
+            musi.musicianName='Mike Thurston'
+            musi.experience=8
+            musi.hourlyRate=120
+            MusicianList.push(musi)
+
+            var musi = new Bassist();
+            musi.instrument='Bassist';
+            musi.musicianName='Jesse James'
+            musi.experience=10
+            musi.hourlyRate=300
+            MusicianList.push(musi)
+
+            var musi = new Bassist();
+            musi.instrument='Bassist';
+            musi.musicianName='111'
+            musi.experience=10
+            musi.hourlyRate=300
+            MusicianList.push(musi)
+
+            var troupe = new Troupe();
+            troupe.minDuration=1;
+            troupe.maxDuration=3;
+            troupe.troupeName='Violent Soho';
+            troupe.genre='Rock';
+            TroupeList.push(troupe)
+
+            var troupe = new Troupe();
+            troupe.minDuration=2;
+            troupe.maxDuration=3;
+            troupe.troupeName='Dune Rats';
+            troupe.genre='Pop';
+            TroupeList.push(troupe)
+
+            var troupe = new Troupe();
+            troupe.minDuration=1;
+            troupe.maxDuration=2;
+            troupe.troupeName='Skeggs';
+            troupe.genre='Jazz';
+            TroupeList.push(troupe)
+
+            var troupe = new Troupe();
+            troupe.minDuration=1;
+            troupe.maxDuration=2;
+            troupe.troupeName='111';
+            troupe.genre='Jazz';
+            TroupeList.push(troupe)
+
+            console.log('\nhardcode successfull')
+}
+
+
+
+module.exports={mainMenu, regMusician, createTroupe, listMusicians, Hardcode, listTroupes, listError, addMusicianToTroupe};
