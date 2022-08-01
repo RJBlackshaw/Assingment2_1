@@ -13,6 +13,10 @@ while(true){
 
     //switch that takes the user choice and executes the correct functions based on their decision
     switch(choice) {
+        case 11:
+            musoFunctions.Hardcode();
+            continue;
+
         case 1:
             musoFunctions.regMusician();
             continue;
@@ -24,7 +28,10 @@ while(true){
         case 3:
             console.log('--------------------------------------------');
             console.log("\nYou've chosen option 3 - Add Musician to troupe")
-
+            let list2Error = musoFunctions.listTroupes();
+            let list1Error = musoFunctions.listMusicians();
+            musoFunctions.listError(list1Error, list2Error);
+            musoFunctions.addMusicianToTroupe();
             continue;
 
         case 4:
