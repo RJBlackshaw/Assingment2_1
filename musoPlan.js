@@ -2,6 +2,8 @@ const ps=require('prompt-sync');
 const prompt=ps();
 
 let musoFunctions = require('./mPFunctions.js');
+let {Troupe} = require('./Troupe.js');
+
 
 let error = false;
 
@@ -27,46 +29,56 @@ while(true){
 
         case 3:
             console.log('--------------------------------------------');
-            console.log("\nYou've chosen option 3 - Add Musician to troupe")
-            let list2Error = musoFunctions.listTroupes();
-            let list1Error = musoFunctions.listMusicians();
+            console.log("\nYou've chosen option 3 - Add Musician to troupe.")
+            list2Error = musoFunctions.listTroupes();
+            list1Error = musoFunctions.listMusicians();
             musoFunctions.listError(list1Error, list2Error);
             musoFunctions.addMusicianToTroupe();
             continue;
 
         case 4:
             console.log('--------------------------------------------');
-            console.log("\nYou've chosen option 4 - Summary description of troupe")
+            console.log("\nYou've chosen option 4 - Summary description of troupe.")
+            list2Error = musoFunctions.listTroupes();
+            list1Error = false
+            musoFunctions.listError(list1Error, list2Error);
+            if (list2Error == true){
+                continue;
+            }
+            Trou = musoFunctions.setTroupe();
+            Trou.troupeDescription();
+            prompt(`Press enter to continue`);
+            
 
             continue;
 
         case 5:
             console.log('--------------------------------------------');
-            console.log("\nYou've chosen option 5 - Detailed description of troupe")
+            console.log("\nYou've chosen option 5 - Detailed description of troupe.")
 
             continue; 
 
         case 6:
             console.log('--------------------------------------------');
-            console.log("\nYou've chosen option 6 - Troupe cost calulation")
+            console.log("\nYou've chosen option 6 - Troupe cost calulation.")
 
             continue;
 
         case 7:
             console.log('--------------------------------------------');
-            console.log("\nYou've chosen option 7 - Export troupe names to file")
+            console.log("\nYou've chosen option 7 - Export troupe names to file.")
 
             continue;
 
         case 8:
             console.log('--------------------------------------------');
-            console.log("\nYou've chosen option 8 - Export troupe details to file")
+            console.log("\nYou've chosen option 8 - Export troupe details to file.")
 
             continue;
 
          case 9:
             console.log('--------------------------------------------');
-            console.log("\nYou've chosen option 9 - Exit MusoPlan")
+            console.log("\nYou've chosen option 9 - Exit MusoPlan.")
 
             break;
 
