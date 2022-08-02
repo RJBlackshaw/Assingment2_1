@@ -21,9 +21,9 @@ function mainMenu(error){
         console.log('|    Select your choice from below     |');
         console.log('|       ----------------------         |');
         console.log('|                                      |');
-        console.log('| 1. Register a Musician               |');
+        console.log('| 1. Register a musician               |');
         console.log('| 2. Create a troupe                   |');
-        console.log('| 3. Add Musician to troupe            |');
+        console.log('| 3. Add musician to troupe            |');
         console.log('| 4. Summary description of troupe     |');
         console.log('| 5. Detailed description of troupe    |');
         console.log('| 6. Troupe cost calulation            |');
@@ -43,7 +43,7 @@ function mainMenu(error){
 //function that adds a new musician into the Musician list array.
 function regMusician(){
     console.log('\n--------------------------------------------');
-    console.log("\nYou've chosen option 1 - Register a Musician")
+    console.log("\nYou've chosen option 1 - Register a Musician.")
     console.log('\n|======================================|');
     console.log('|  Select their instrument from below  |');
     console.log('|       ----------------------         |');
@@ -104,7 +104,7 @@ function regMusician(){
                         if(musiRate >=50){
                             break;
                         } else {
-                            musiRate=prompt('Enter the Musicians hourly rate (50 or greater): ').trim();
+                            musiRate=parseInt(prompt('Enter the Musicians hourly rate (50 or greater): ').trim());
                             musi.hourlyRate=musiRate;                          
                         }
                 } else {
@@ -127,7 +127,7 @@ function regMusician(){
 //function that creates an instance of Troupe and pushes it to Troupelist Array
 function createTroupe(){
     console.log('\n--------------------------------------------');
-    console.log("\nYou've chosen option 2 - Create a troupe\n")
+    console.log("\nYou've chosen option 2 - Create a troupe.\n")
 
     let troupeName="";
     let troupeMinDuration=0;
@@ -202,6 +202,7 @@ function listTroupes (){
         for(let i=0; i < TroupeList.length;i++){
             console.log(`- ${TroupeList[i].troupeName}`);
         }
+        console.log('')
         return list2Error = false
     }
 }
@@ -239,9 +240,7 @@ function listError(list1Error, list2Error){
         console.log(`\nThere are no Troupes registered in the system.`);
         return;
     }
-
 }
-
 
 function addMusicianToTroupe(){
     //stops the function if a list is empty.
@@ -295,6 +294,36 @@ function addMusicianToTroupe(){
     
     //calls the Troupe instance method addMusician and pushes the musician to the array
     Trou.addMusician(mus)
+}
+
+function setTroupe(){
+    //stops the function if a list is empty.
+    if(TroupeList.length == 0){
+        console.log(`\nThere are no Troupes registered in the system.`)
+        return
+    } 
+    let Trou = 0;
+
+    //while loop for continuous prompting on fail.
+    while(true){
+        if(Trou != 0){
+            break;
+        } else {
+            troupe_name=prompt('Enter Troupe name: ').trim();
+
+            for(let i=0; i < TroupeList.length; i++){
+                    if(TroupeList[i].troupeName == troupe_name){
+                        Trou = TroupeList[i]
+                    }
+                }
+
+            //if previous loop fails to find a match, below statement will trigger
+            if( Trou == 0){
+                console.log(`\nNo Troupe Name found under ${troupe_name}.`);
+            };
+            return Trou
+        }
+    }
 }
 
 //Hidden presets. enter 11 on first menu to register entries below.
@@ -374,4 +403,4 @@ function Hardcode (){
 
 
 
-module.exports={mainMenu, regMusician, createTroupe, listMusicians, Hardcode, listTroupes, listError, addMusicianToTroupe};
+module.exports={mainMenu, regMusician, createTroupe, listMusicians, Hardcode, listTroupes, listError, addMusicianToTroupe, setTroupe};
