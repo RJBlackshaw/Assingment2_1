@@ -47,16 +47,27 @@ while(true){
             }
             Trou = musoFunctions.setTroupe();
             Trou.troupeDescription();
+            console.log(`\n|======================================|\n`);    
             prompt(`Press enter to continue`);
-            
-
             continue;
 
         case 5:
             console.log('--------------------------------------------');
             console.log("\nYou've chosen option 5 - Detailed description of troupe.")
+            list2Error = musoFunctions.listTroupes();
+            list1Error = false
+            musoFunctions.listError(list1Error, list2Error);
+            if (list2Error == true){
+                continue;
+            }
+            Trou = musoFunctions.setTroupe();
+            Trou.troupeDescription();
+            console.log(`\n            ~The Musicians~          \n`);
+            console.log('--------------------------------------------');
+            Trou.musicianDescription();
+            prompt(`Press enter to continue`);
+            continue;
 
-            continue; 
 
         case 6:
             console.log('--------------------------------------------');
