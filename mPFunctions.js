@@ -306,8 +306,8 @@ function setTroupe(){
 
     //while loop for continuous prompting on fail.
     while(true){
-        if(Trou != 0){
-            break;
+        if(typeof Trou === 'object'){
+            return Trou
         } else {
             troupe_name=prompt('Enter Troupe name: ').trim();
 
@@ -319,88 +319,103 @@ function setTroupe(){
 
             //if previous loop fails to find a match, below statement will trigger
             if( Trou == 0){
-                console.log(`\nNo Troupe Name found under ${troupe_name}.`);
+                console.log(`\nNo Troupe Name found under ${troupe_name}`);
+                continue;
             };
-            return Trou
+        }
+    }
+}
+
+//takes troupe instance and a time and multiplies total rate by time.
+function troupeTimeCost(trou, time){
+    //while loop to ensure time is between min and max time for validation
+    while(true){
+        if(time <= trou.maxDuration && time >= trou.minDuration){
+            let timeCost = trou.totalCost() * time
+            console.log(`\nFor a ${time} hour set at $${trou.totalCost()} an hour, ${trou.troupeName} will cost $${timeCost}.`)
+            break;
+        } else {
+            console.log(`\nError: The maximum Duration of ${trou.troupeName} is ${trou.maxDuration}.\nPlease Select a time between ${trou.minDuration} and ${trou.maxDuration} hours.\n`);
+            time = prompt('How many hours do you want the Troupe to play for: ')
         }
     }
 }
 
 //Hidden presets. enter 11 on first menu to register entries below.
 function Hardcode (){
-    var musi = new Guitarist();
-            musi.instrument='Guitarist';
-            musi.musicianName='Robert Blackshaw'
-            musi.experience=12
-            musi.hourlyRate=75
-            MusicianList.push(musi)
+        var musi = new Guitarist();
+        musi.instrument='Guitarist';
+        musi.musicianName='Robert Blackshaw'
+        musi.experience=12
+        musi.hourlyRate=75
+        MusicianList.push(musi)
 
-            var musi = new Bassist();
-            musi.instrument='Bassist';
-            musi.musicianName='Emma Nickel'
-            musi.experience=15
-            musi.hourlyRate=85
-            MusicianList.push(musi)
+        var musi = new Bassist();
+        musi.instrument='Bassist';
+        musi.musicianName='Emma Nickel'
+        musi.experience=15
+        musi.hourlyRate=85
+        MusicianList.push(musi)
 
-            var musi = new Percussionist();
-            musi.instrument='Percussionist';
-            musi.musicianName='Hayden Cooper'
-            musi.experience=5
-            musi.hourlyRate=50
-            MusicianList.push(musi)
+        var musi = new Percussionist();
+        musi.instrument='Percussionist';
+        musi.musicianName='Hayden Cooper'
+        musi.experience=5
+        musi.hourlyRate=50
+        MusicianList.push(musi)
 
-            var musi = new Flautist();
-            musi.instrument='Flautist';
-            musi.musicianName='Mike Thurston'
-            musi.experience=8
-            musi.hourlyRate=120
-            MusicianList.push(musi)
+        var musi = new Flautist();
+        musi.instrument='Flautist';
+        musi.musicianName='Mike Thurston'
+        musi.experience=8
+        musi.hourlyRate=120
+        MusicianList.push(musi)
 
-            var musi = new Bassist();
-            musi.instrument='Bassist';
-            musi.musicianName='Jesse James'
-            musi.experience=10
-            musi.hourlyRate=300
-            MusicianList.push(musi)
+        var musi = new Bassist();
+        musi.instrument='Bassist';
+        musi.musicianName='Jesse James'
+        musi.experience=10
+        musi.hourlyRate=300
+        MusicianList.push(musi)
 
-            var musi = new Bassist();
-            musi.instrument='Bassist';
-            musi.musicianName='111'
-            musi.experience=10
-            musi.hourlyRate=300
-            MusicianList.push(musi)
+        var musi = new Bassist();
+        musi.instrument='Bassist';
+        musi.musicianName='111'
+        musi.experience=10
+        musi.hourlyRate=300
+        MusicianList.push(musi)
 
-            var troupe = new Troupe();
-            troupe.minDuration=1;
-            troupe.maxDuration=3;
-            troupe.troupeName='Violent Soho';
-            troupe.genre='Rock';
-            TroupeList.push(troupe)
+        var troupe = new Troupe();
+        troupe.minDuration=1;
+        troupe.maxDuration=3;
+        troupe.troupeName='Violent Soho';
+        troupe.genre='Rock';
+        TroupeList.push(troupe)
 
-            var troupe = new Troupe();
-            troupe.minDuration=2;
-            troupe.maxDuration=3;
-            troupe.troupeName='Dune Rats';
-            troupe.genre='Pop';
-            TroupeList.push(troupe)
+        var troupe = new Troupe();
+        troupe.minDuration=2;
+        troupe.maxDuration=3;
+        troupe.troupeName='Dune Rats';
+        troupe.genre='Pop';
+        TroupeList.push(troupe)
 
-            var troupe = new Troupe();
-            troupe.minDuration=1;
-            troupe.maxDuration=2;
-            troupe.troupeName='Skeggs';
-            troupe.genre='Jazz';
-            TroupeList.push(troupe)
+        var troupe = new Troupe();
+        troupe.minDuration=1;
+        troupe.maxDuration=2;
+        troupe.troupeName='Skeggs';
+        troupe.genre='Jazz';
+        TroupeList.push(troupe)
 
-            var troupe = new Troupe();
-            troupe.minDuration=1;
-            troupe.maxDuration=2;
-            troupe.troupeName='111';
-            troupe.genre='Jazz';
-            TroupeList.push(troupe)
+        var troupe = new Troupe();
+        troupe.minDuration=1;
+        troupe.maxDuration=2;
+        troupe.troupeName='111';
+        troupe.genre='Jazz';
+        TroupeList.push(troupe)
 
-            console.log('\nhardcode successfull')
+        console.log('\nhardcode successfull')
 }
 
 
 
-module.exports={mainMenu, regMusician, createTroupe, listMusicians, Hardcode, listTroupes, listError, addMusicianToTroupe, setTroupe};
+module.exports={mainMenu, regMusician, createTroupe, listMusicians, listTroupes, Hardcode, listError, addMusicianToTroupe, setTroupe, troupeTimeCost};
