@@ -112,15 +112,20 @@ class Troupe{
         }
 
         //summary description
-        console.log('\n|======================================|');
+        console.log('\n|===========================================|\n');
         console.log(`  Troupe Name:          ${this.troupeName}  `);
         console.log(`  Genre:                ${this.genre}  `);
         console.log(`  Minimum booking:      ${this.minDuration} hour  `);
         console.log(`  Maximum booking:      ${this.maxDuration} hour `);
         console.log(`  Hourly rate:          $${totalRate}/hour \n`);
         console.log(`             ~Instruments~          `);
-                    instrumentList()
-        console.log(`|======================================|\n`);    
+        instrumentList();
+    }
+
+    musicianDescription(){
+        for(let i=0; i < this.tMembers.length; i++){
+            this.tMembers[i].detailedDescription();
+        }
     }
 }
 
