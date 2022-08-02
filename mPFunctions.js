@@ -27,7 +27,7 @@ function mainMenu(error){
         console.log('| 4. Summary description of troupe     |');
         console.log('| 5. Detailed description of troupe    |');
         console.log('| 6. Troupe cost calulation            |');
-        console.log('| 7. Export troupe names to file       |');
+        console.log('| 7. Import troupe names from file     |');
         console.log('| 8. Export troupe details to file     |');
         console.log('| 9. Exit MusoPlan                     |');
         console.log('|                                      |');
