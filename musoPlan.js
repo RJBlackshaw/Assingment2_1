@@ -72,7 +72,16 @@ while(true){
         case 6:
             console.log('--------------------------------------------');
             console.log("\nYou've chosen option 6 - Troupe cost calulation.")
-
+            list2Error = musoFunctions.listTroupes();
+            list1Error = false
+            musoFunctions.listError(list1Error, list2Error);
+            if (list2Error == true){
+                continue;
+            }
+            trou = musoFunctions.setTroupe();
+            console.log('')
+            let time = prompt('How many hours do you want the Troupe to play for: ')
+            musoFunctions.troupeTimeCost(trou, time)
             continue;
 
         case 7:
