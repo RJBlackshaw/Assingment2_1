@@ -122,10 +122,20 @@ class Troupe{
         instrumentList();
     }
 
+    //loops to each musician in tMembers array and returns their descriptions
     musicianDescription(){
         for(let i=0; i < this.tMembers.length; i++){
             this.tMembers[i].detailedDescription();
         }
+    }
+
+    //loops through the musicians and tally's their hourlyrates and returns a total rate.
+    totalCost(){
+        let totalRate = 0;
+        for(let i=0; i < this.tMembers.length; i++){
+            totalRate += this.tMembers[i].hourlyRate;
+        }
+        return totalRate;
     }
 }
 
