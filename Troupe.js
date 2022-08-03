@@ -122,13 +122,13 @@ class Troupe{
             }
 
         //summary description
-        return   `|===========================================|\n`
+        return   `\n|=====================================================|\n`
                 +`  Troupe Name:             ${this.troupeName}  \n`
                 +`  Genre:                   ${this.genre}  \n`
                 +`  Minimum booking:         ${this.minDuration} hour  \n`
                 +`  Maximum booking:         ${this.maxDuration} hour \n`
                 +`  Hourly rate:             $${totalRate}/hour `+`\n`+`\n`
-                +`                 ~Instruments~          `+`\n`
+                +`                 ~Instruments~          `+`\n`+`\n`
                 +`${totalGuitars !=0 ? guitarList() : ''}`
                 +`${totalBass !=0 ? bassList(): ''}`
                 +`${totalFlute !=0 ? FluteList(): ''}`
@@ -137,9 +137,11 @@ class Troupe{
 
     //loops to each musician in tMembers array and returns their descriptions
     musicianDescription(){
+        let result = ''
         for(let i=0; i < this.tMembers.length; i++){
-            this.tMembers[i].detailedDescription();
+            result += this.tMembers[i].detailedDescription();
         }
+        return result
     }
 
     //loops through the musicians and tally's their hourlyrates and returns a total rate.
