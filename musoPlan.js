@@ -81,6 +81,7 @@ while(true){
             console.log('')
             let time = prompt('How many hours do you want the Troupe to play for: ')
             musoFunctions.troupeTimeCost(trou, time)
+            prompt(`\nPress enter to continue`);
             continue;
 
         case 7:
@@ -94,6 +95,7 @@ while(true){
             console.log('--------------------------------------------');
             console.log("\nYou've chosen option 8 - Export troupe details to file.")
             musoFunctions.exportTroupe()
+            prompt(`Press enter to continue`);
             continue;
 
          case 9:
