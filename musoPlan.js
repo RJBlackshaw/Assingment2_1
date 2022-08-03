@@ -46,8 +46,8 @@ while(true){
                 continue;
             }
             Trou = musoFunctions.setTroupe();
-            Trou.troupeDescription();
-            console.log(`\n|======================================|\n`);    
+            console.log(Trou.troupeDescription());
+            console.log(`|===========================================|\n`);    
             prompt(`Press enter to continue`);
             continue;
 
@@ -61,10 +61,9 @@ while(true){
                 continue;
             }
             Trou = musoFunctions.setTroupe();
-            Trou.troupeDescription();
-            console.log(`\n            ~The Musicians~          \n`);
-            console.log('--------------------------------------------');
-            Trou.musicianDescription();
+            console.log(Trou.troupeDescription());
+            console.log('                 ~The Musicians~          \n')
+            console.log(Trou.musicianDescription());
             prompt(`Press enter to continue`);
             continue;
 
@@ -94,13 +93,12 @@ while(true){
         case 8:
             console.log('--------------------------------------------');
             console.log("\nYou've chosen option 8 - Export troupe details to file.")
-
+            musoFunctions.exportTroupe()
             continue;
 
          case 9:
             console.log('--------------------------------------------');
             console.log("\nYou've chosen option 9 - Exit MusoPlan.")
-
             break;
 
         //invalid inputs =/= 1-9 default to here and return the main menu function with the error message.    
