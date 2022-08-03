@@ -231,14 +231,17 @@ function listMusicians (){
 function listError(list1Error, list2Error){
     if (list1Error == true && list2Error == true){
          console.log(`\nThere are no Musicians or Troupes registered in the system.`)
+         prompt(`\nPress enter to continue`);
          return;
     }
     if (list1Error == true){
         console.log('\nThere are no Musicians registered in the system.')
+        prompt(`\nPress enter to continue`);
         return;
     }
     if(list2Error== true){
         console.log(`\nThere are no Troupes registered in the system.`);
+        prompt(`\nPress enter to continue`);
         return;
     }
 }
