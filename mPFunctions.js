@@ -1,5 +1,6 @@
 const ps=require('prompt-sync');
 const prompt=ps();
+const fs=require('fs');
 
 let {Guitarist} = require('./Guitarist.js');
 let {Bassist} = require('./Bassist.js');
@@ -341,6 +342,30 @@ function troupeTimeCost(trou, time){
     }
 }
 
+//function imports names from troupeNames.txt, seperates the list into an array and uses a loop 
+//to enter each name as a troupe instance.
+function createImportTroupe(){
+    const r = fs.readFileSync('troupeNames.txt', 'utf8');
+    const list = r.split("\r\n");
+
+    for(i=0; list.length > i; i++){
+        let troupe = new Troupe();
+
+        //if statement used for 3 - 30 character validation
+        if (list[i].length >=3 && list[i].length <= 30){
+            troupe.troupeName=list[i];
+            troupe.minDuration=1.5;
+            troupe.maxDuration=3;
+            troupe.genre='';
+            TroupeList.push(troupe)
+            console.log(`"${list[i]}" registered successfully.`);
+        } else {
+            console.log(`"${list[i]}" was not registered as "${list[i]}" needs to be 3 to 30 characters.`)
+        }
+    }
+}
+
+
 //Hidden presets. enter 11 on first menu to register entries below.
 function Hardcode (){
         var musi = new Guitarist();
@@ -418,4 +443,4 @@ function Hardcode (){
 
 
 
-module.exports={mainMenu, regMusician, createTroupe, listMusicians, listTroupes, Hardcode, listError, addMusicianToTroupe, setTroupe, troupeTimeCost};
+module.exports={mainMenu, regMusician, createTroupe, listMusicians, listTroupes, Hardcode, listError, addMusicianToTroupe, setTroupe, troupeTimeCost, createImportTroupe};
