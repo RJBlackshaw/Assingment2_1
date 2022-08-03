@@ -83,43 +83,56 @@ class Troupe{
         }
 
         //Function that turns instrument totals into strings
-        function instrumentList(){
-            console.log()
-            if(totalGuitars == 1){
-                console.log(`             1 Guitarist`)
+            function guitarList(){
+
+                if(totalGuitars == 1){
+                    return`                 1 Guitarist\n`;
+                }
+                if (totalGuitars > 1){
+                    return`                 ${totalGuitars} Guitarist's\n`;
+                }
             }
-            if (totalGuitars > 1){
-                console.log(`             ${totalGuitars} Guitarist's`)
+
+            function FluteList(){
+
+                if(totalFlute == 1){
+                    return`                 1 Flautist\n`;
+                }
+                if (totalFlute > 1){
+                    return`                 ${totalFlute} Flautist's\n`;
+                }
             }
-            if(totalFlute == 1){
-                console.log(`             1 Flautist`)
+
+            function bassList(){
+                if(totalBass == 1){
+                    return`                 1 Bassist\n`;
+                }
+                if (totalBass > 1){
+                    return`                 ${totalBass} Bassist's\n`;
+                }
             }
-            if (totalFlute > 1){
-                console.log(`             ${totalFlute} Flautist's`)
+
+            function percussionList(){
+                if(totalPercussion == 1){
+                    return`                 1 Percussionst\n`;
+                }
+                if (totalPercussion > 1){
+                    return`                 ${totalPercussion} Percussionst's\n`;
+                }
             }
-            if(totalBass == 1){
-                console.log(`             1 Bassist`)
-            }
-            if (totalBass > 1){
-                console.log(`             ${totalBass} Bassist's`)
-            }
-            if(totalPercussion == 1){
-                console.log(`             1 Percussionst`)
-            }
-            if (totalPercussion > 1){
-                console.log(`             ${totalPercussion} Percussionst's`)
-            }
-        }
 
         //summary description
-        console.log('\n|===========================================|\n');
-        console.log(`  Troupe Name:          ${this.troupeName}  `);
-        console.log(`  Genre:                ${this.genre}  `);
-        console.log(`  Minimum booking:      ${this.minDuration} hour  `);
-        console.log(`  Maximum booking:      ${this.maxDuration} hour `);
-        console.log(`  Hourly rate:          $${totalRate}/hour \n`);
-        console.log(`             ~Instruments~          `);
-        instrumentList();
+        return   `|===========================================|\n`
+                +`  Troupe Name:             ${this.troupeName}  \n`
+                +`  Genre:                   ${this.genre}  \n`
+                +`  Minimum booking:         ${this.minDuration} hour  \n`
+                +`  Maximum booking:         ${this.maxDuration} hour \n`
+                +`  Hourly rate:             $${totalRate}/hour `+`\n`+`\n`
+                +`                 ~Instruments~          `+`\n`
+                +`${totalGuitars !=0 ? guitarList() : ''}`
+                +`${totalBass !=0 ? bassList(): ''}`
+                +`${totalFlute !=0 ? FluteList(): ''}`
+                +`${totalPercussion !=0 ? percussionList(): ''}`
     }
 
     //loops to each musician in tMembers array and returns their descriptions
