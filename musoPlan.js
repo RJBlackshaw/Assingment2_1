@@ -62,7 +62,7 @@ while(true){
             }
             Trou = musoFunctions.setTroupe();
             console.log(Trou.troupeDescription());
-            console.log('                 ~The Musicians~          \n')
+            console.log('                ~The Musicians~          \n')
             console.log(Trou.musicianDescription());
             prompt(`Press enter to continue`);
             continue;
