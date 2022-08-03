@@ -6,8 +6,13 @@ class Percussionist extends Musician{
     }
 
     detailedDescription(){
-        console.log(`Hi there! My name is ${this.musicianName}, I am a percussionist,\nI have been playing for ${this.experience} years and my hourly rate is $${this.hourlyRate} an hour.\nAs a flautist, I like to say:\n\n"1989 heavy metal instrument of the year" \n`);
-        console.log('--------------------------------------------\n');
+        return `    Hi there! My name is ${this.musicianName} and I am a percussionist!
+    I have been playing for ${this.experience} years and my hourly rate is $${this.hourlyRate} an hour.
+    As a percussionist, I like to say:
+        
+        "Me drum"
+        
+    --------------------------------------------------\n\n`;
     }
 }
 
