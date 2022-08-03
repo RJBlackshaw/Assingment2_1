@@ -1,9 +1,9 @@
 const ps=require('prompt-sync');
 const prompt=ps();
+const fs=require('fs');
 
 let musoFunctions = require('./mPFunctions.js');
 let {Troupe} = require('./Troupe.js');
-
 
 let error = false;
 
@@ -86,8 +86,9 @@ while(true){
 
         case 7:
             console.log('--------------------------------------------');
-            console.log("\nYou've chosen option 7 - Export troupe names to file.")
-
+            console.log("\nYou've chosen option 7 - Import troupe names from file.\n")
+            musoFunctions.createImportTroupe()
+            prompt(`\nPress enter to continue`);
             continue;
 
         case 8:
