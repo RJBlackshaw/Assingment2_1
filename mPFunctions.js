@@ -27,7 +27,7 @@ function mainMenu(error){
         console.log('| 3. Add musician to troupe            |');
         console.log('| 4. Summary description of troupe     |');
         console.log('| 5. Detailed description of troupe    |');
-        console.log('| 6. Troupe cost calulation            |');
+        console.log('| 6. Troupe cost calculation           |');
         console.log('| 7. Import troupe names from file     |');
         console.log('| 8. Export troupe details to file     |');
         console.log('| 9. Exit MusoPlan                     |');
@@ -365,6 +365,25 @@ function createImportTroupe(){
     }
 }
 
+//for loop used to add descriptions from each troupe instance together
+function exportTroupe(){
+    if(TroupeList.length == 0){
+        console.log(`\nThere are no Troupes registered in the system.`);
+        prompt(`\nPress enter to continue`);
+    }
+
+    let allDescriptions = ''
+
+    for(let i=0; i < TroupeList.length;i++){
+        let troupeDetails=TroupeList[i].troupeDescription();
+        allDescriptions += troupeDetails;
+        let musicianDetails=TroupeList[i].musicianDescription()
+        allDescriptions += musicianDetails;
+    }
+
+    fs.writeFileSync('TroupeExport.txt', allDescriptions, 'utf8');
+    console.log(`\nAll Troupes successfully exported to TroupeExport.txt`)
+}
 
 //Hidden presets. enter 11 on first menu to register entries below.
 function Hardcode (){
@@ -441,6 +460,4 @@ function Hardcode (){
         console.log('\nhardcode successfull')
 }
 
-
-
-module.exports={mainMenu, regMusician, createTroupe, listMusicians, listTroupes, Hardcode, listError, addMusicianToTroupe, setTroupe, troupeTimeCost, createImportTroupe};
+module.exports={mainMenu, regMusician, createTroupe, listMusicians, listTroupes, Hardcode, listError, addMusicianToTroupe, setTroupe, troupeTimeCost, createImportTroupe, exportTroupe};
