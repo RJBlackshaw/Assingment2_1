@@ -2,7 +2,7 @@
   "name": "assingment2_1",
   "version": "1.0.1",
   "description": "Robbie Blackshaw Assingemnt For MusoPlan",
-  "main": "MusoPlan.js",
+  "main": "musoPlan.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
