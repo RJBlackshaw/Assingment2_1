@@ -10,11 +10,9 @@ class Musician {
     if (mName.length >= 3 && mName.length <= 30) {
       this.musician_Name = mName;
     } else {
-      console.log(
-        "\nError: Invalid input. Name must be between 3 and 30 characters"
-      );
-    }
-  }
+      throw new Error (`\nError: Invalid input. Name must be between 3 and 30 characters`);
+  };
+}
   get musicianName() {
     return this.musician_Name;
   }
@@ -23,9 +21,7 @@ class Musician {
     if (exp >= 0) {
       this.experience_ = exp;
     } else {
-      console.log(
-        "\nError: Invalid input. Experience must be whole numbers equal or greater than 0"
-      );
+      this.experience_ = null
     }
   }
   get experience() {
@@ -36,9 +32,8 @@ class Musician {
     if (hRate >= 50) {
       this.hourly_Rate = hRate;
     } else {
-      console.log(
-        "\nError: Invalid input. Hourly rate must be whole numbers equal or greater than 50"
-      );
+      this.hourly_Rate = null;
+
     }
   }
   get hourlyRate() {

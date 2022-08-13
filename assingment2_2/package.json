@@ -9,7 +9,10 @@
   },
   "jest": {
     "verbose": true,
-    "reporters": ["default", "jest-junit"]
+    "reporters": [
+      "default",
+      "jest-junit"
+    ]
   },
   "repository": {
     "type": "git",

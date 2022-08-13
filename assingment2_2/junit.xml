@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="37" failures="0" errors="0" time="1.125">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-08-13T12:22:20" time="0.355" tests="20">
+    <testcase classname=" test setting troupe name for 6 characters" name=" test setting troupe name for 6 characters" time="0.002">
+    </testcase>
+    <testcase classname=" test setting troupe name for 3 characters" name=" test setting troupe name for 3 characters" time="0">
+    </testcase>
+    <testcase classname=" test setting troupe name for 30 characters" name=" test setting troupe name for 30 characters" time="0">
+    </testcase>
+    <testcase classname=" test setting troupe name for 2 characters" name=" test setting troupe name for 2 characters" time="0.014">
+    </testcase>
+    <testcase classname=" test setting troupe minimum duration to 2" name=" test setting troupe minimum duration to 2" time="0">
+    </testcase>
+    <testcase classname=" test setting troupe minimum duration to 0.5" name=" test setting troupe minimum duration to 0.5" time="0">
+    </testcase>
+    <testcase classname=" test setting troupe minimum duration to 0" name=" test setting troupe minimum duration to 0" time="0">
+    </testcase>
+    <testcase classname=" test setting troupe minimum duration to string &apos;three&apos;" name=" test setting troupe minimum duration to string &apos;three&apos;" time="0">
+    </testcase>
+    <testcase classname=" test setting troupe maximum duration to 2" name=" test setting troupe maximum duration to 2" time="0">
+    </testcase>
+    <testcase classname=" test setting troupe maximum duration to 0.5" name=" test setting troupe maximum duration to 0.5" time="0.001">
+    </testcase>
+    <testcase classname=" test setting troupe maximum duration to 0" name=" test setting troupe maximum duration to 0" time="0">
+    </testcase>
+    <testcase classname=" test setting troupe maximum duration to 5" name=" test setting troupe maximum duration to 5" time="0.001">
+    </testcase>
+    <testcase classname=" test setting troupe maximum duration to string &apos;three&apos;" name=" test setting troupe maximum duration to string &apos;three&apos;" time="0">
+    </testcase>
+    <testcase classname=" test setting troupe maximum duration to 1 when minimum duration is 2" name=" test setting troupe maximum duration to 1 when minimum duration is 2" time="0">
+    </testcase>
+    <testcase classname=" test setting musician instrument to Bassist" name=" test setting musician instrument to Bassist" time="0">
+    </testcase>
+    <testcase classname=" test add musician function" name=" test add musician function" time="0.022">
+    </testcase>
+    <testcase classname=" test add musician function with 2 musicians" name=" test add musician function with 2 musicians" time="0.004">
+    </testcase>
+    <testcase classname=" test troupe Description function" name=" test troupe Description function" time="0.002">
+    </testcase>
+    <testcase classname=" test add musician function with 2 musicians" name=" test add musician function with 2 musicians" time="0.002">
+    </testcase>
+    <testcase classname=" test add musician function with 2 musicians" name=" test add musician function with 2 musicians" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-08-13T12:22:20" time="0.123" tests="13">
+    <testcase classname=" test setting musician name for 6 characters" name=" test setting musician name for 6 characters" time="0.001">
+    </testcase>
+    <testcase classname=" test setting musician name for 3 characters" name=" test setting musician name for 3 characters" time="0">
+    </testcase>
+    <testcase classname=" test setting musician name for 30 characters" name=" test setting musician name for 30 characters" time="0.001">
+    </testcase>
+    <testcase classname=" test setting musician name for 2 characters" name=" test setting musician name for 2 characters" time="0.007">
+    </testcase>
+    <testcase classname=" test setting musician instrument to Bassist" name=" test setting musician instrument to Bassist" time="0.001">
+    </testcase>
+    <testcase classname=" test setting musician experience to edge case 0" name=" test setting musician experience to edge case 0" time="0">
+    </testcase>
+    <testcase classname=" test setting musician experience to interior value 15" name=" test setting musician experience to interior value 15" time="0.001">
+    </testcase>
+    <testcase classname=" test setting musician experience to be a negative number" name=" test setting musician experience to be a negative number" time="0">
+    </testcase>
+    <testcase classname=" test setting musician experience to be a string" name=" test setting musician experience to be a string" time="0">
+    </testcase>
+    <testcase classname=" test setting musician hourly rate to edge case 50" name=" test setting musician hourly rate to edge case 50" time="0.001">
+    </testcase>
+    <testcase classname=" test setting musician hourly rate to interior value 75" name=" test setting musician hourly rate to interior value 75" time="0">
+    </testcase>
+    <testcase classname=" test setting musician hourly rate to 49" name=" test setting musician hourly rate to 49" time="0">
+    </testcase>
+    <testcase classname=" test setting musician hourly rate to string" name=" test setting musician hourly rate to string" time="0">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-08-13T12:22:20" time="0.112" tests="1">
+    <testcase classname=" test detailedDescription function" name=" test detailedDescription function" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-08-13T12:22:20" time="0.12" tests="1">
+    <testcase classname=" test detailedDescription function" name=" test detailedDescription function" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-08-13T12:22:20" time="0.123" tests="1">
+    <testcase classname=" test detailedDescription function" name=" test detailedDescription function" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-08-13T12:22:21" time="0.123" tests="1">
+    <testcase classname=" test detailedDescription function" name=" test detailedDescription function" time="0.001">
+    </testcase>
+  </testsuite>
+</testsuites>

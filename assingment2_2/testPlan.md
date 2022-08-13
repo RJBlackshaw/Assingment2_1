@@ -77,6 +77,8 @@
 ### Test 4: Add Musician to Troupe
       Description: Check whether musician array in troupe class length increases with each addition.
 
+      Type: Automated
+
       Preconditions: Have troupes and Musicians in the system.
 
       Input Values: Enter Troupe name: Dune Rats

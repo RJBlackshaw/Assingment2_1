@@ -3,7 +3,7 @@ class Troupe {
     if (tName.length >= 3 && tName.length <= 30) {
       this.troupe = tName;
     } else {
-      console.log(
+      throw new Error(
         "\nError: Invalid input. Troupe name must be between 3 and 30 characters"
       );
     }
@@ -16,9 +16,8 @@ class Troupe {
     if (minD >= 0.5 && minD <= 3) {
       this.min_Duration = minD;
     } else {
-      console.log(
-        "\nError: Invalid input. Maximum duration must be number between 0.5 and 3"
-      );
+      this.min_Duration = null;
+
     }
   }
   get minDuration() {
@@ -29,9 +28,8 @@ class Troupe {
     if (maxD >= 0.5 && maxD <= 3 && maxD >= this.minDuration) {
       this.max_Duration = maxD;
     } else {
-      console.log(
-        "\nError: Invalid input. Maximum duration must be number between 0.5 and 3 and bigger than the minimum duration"
-      );
+      this.max_Duration = null;
+
     }
   }
   get maxDuration() {
