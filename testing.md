@@ -1,33 +1,84 @@
 # MusoPlan testing
+
 ##### Authored by Robert Blackshaw
+
+<br />
+The program was initially developed with validation and perfection in mind throughout the entire process. Each stage was tested thoroughly before being added and commited to the repository. 
 <br /><br />
 
-The program was initially developed with validation and perfection in mind throughout the entire process. Each stage was tested thoroughly before being added and commited to the repository. 
+### Case 1 - Adding a Musician
 
--Case 1: Adding a musician to a Troupe<br />
+---
 
-      In order to add a musician to a Troupe there first must be Troupes and musicians in the system. The program would be considered bad user experience if the user was allowed to enter this menu when it can never work.
+<br />
 
-      When the user selected 3 for adding a musician to a troupe. The first line of code executed is a function that has an if statement that checks the musicianArray.length and troupeArray.length and if either of these return zero the user is sent back to the menu with an error message.
+This will test the functionality of option 1 _'Adding a musician to a Troupe'_. The following instructions were followed:
 
-      This fuction is working as intended. It even has a switch statement for its error message that can determine whether there are no musicians or no troupes in the system, or both!
+1. Select option 1 from the main menu list by entering '1'
+2. Enter either option 1, 2, 3 or 4 depending on the musician required
+3. Enter the musicians name (must be between 3 and 30 characters)
+4. Enter the musicians years of experience (must be a number greater than 0)
+5. Enter the musicians Hourly rate (must be a number greater than 50)
 
--Case 2: Wrong user inputs
+| Input                                                      |                                                               Expected Output                                                               |                                                                                                                                      Output |
+| ---------------------------------------------------------- | :-----------------------------------------------------------------------------------------------------------------------------------------: | ------------------------------------------------------------------------------------------------------------------------------------------: |
+| '1' <br />'1'<br />'Robert Blackshaw' <br />'5' <br />'75' |                                                    'Guitarist registered successfully.'                                                     |                                                                                                        'Guitarist registered successfully.' |
+| '1' <br />'5'                                              |                               'Error: Invalid input. You've chosen 5'<br />'Enter your choice [from 1 - 4] :'                               |                                                             'Error: Invalid input. You've chosen 5'<br />'Enter your choice [from 1 - 4] :' |
+| '1' <br />'1'<br />'Bo'                                    |            'Error: Invalid input. Name must be between 3 and 30 characters'<br />'Enter the Musician Name (3 - 30 characters): '            |                      ''Error: Invalid input. Name must be between 3 and 30 characters'<br />'Enter the Musician Name (3 - 30 characters): ' |
+| '1' <br />'1'<br />'Robert Blackshaw' <br />'F'            |   'Error: Invalid input. Experience must be whole numbers equal or greater than 0'<br />'Enter the Musicians Experience (0 or greater): '   |     'Error: Invalid input. Experience must be whole numbers equal or greater than 0'<br />'Enter the Musicians Experience (0 or greater): ' |
+| '1' <br />'1'<br />'Robert Blackshaw' <br />'-5'           |   'Error: Invalid input. Experience must be whole numbers equal or greater than 0'<br />'Enter the Musicians Experience (0 or greater): '   |     'Error: Invalid input. Experience must be whole numbers equal or greater than 0'<br />'Enter the Musicians Experience (0 or greater): ' |
+| '1' <br />'1'<br />'Robert Blackshaw' <br />'5'<br />'30'  | 'Error: Invalid input. Hourly rate must be whole numbers equal or greater than 50'<br />'Enter the Musicians hourly rate (50 or greater): ' | 'Error: Invalid input. Hourly rate must be whole numbers equal or greater than 50'<br />'Enter the Musicians hourly rate (50 or greater): ' |
+|                                                            |                                                                                                                                             |
 
-      The keyboard has hundreds of possible inputs. The program must be able to accept all possible inputs without failing. 
-      For example, if the user entered the letters 'foo' when prompted with a question asking for the musicians hourly rate and the program accepted it. When the program later tries to calculate the bands total rate it will not be able to add and multiply words.
-      Good user design would not allow the user to enter a word instead of a number. Better user design would be to immediately prompt the user to enter a real value instead of a returning them to the menu to start again.
+No modifications were required as the code worked as intended.
 
-      There are many times the user is prompted to type information into the program. Every one of these occasions has been tested for incorrect inputs and programmed using a compbination of loops, switches and if statements in order to reprompt the user, asking for a correct input and often explaining thier mistake.
+<br /><br />
 
-      i.e When the user is asked to enter a number of 1,2,3 or 4, and the user instead types anything else, such as 5, 11, hello, P, it prompted the user again asking for a number between 1 and 4 to continue.
+### Case 2 - Create a Troupe
 
--Case 3:  Exporting detailed descriptions to txt file.
+---
 
-      A major issue that was encountered was for step 8 which was to export the detailed descriptions of all troupes to a text file. The functions were written and when tested for the first time the text file filled up with 'undefined' values over and over. It wasn't immediately clear the problem. Console.log was used all throughout the functions to return the values of varibles at each segment in order to discover which part was failing. Unfortunately, the function was working as intended. After alot of thought it was discover that writing data to a file was only possilbe with common data types such as strings and integers.
+<br />
 
-      The way the step 4 and 5 functions were written was to return multiple console.log's to present the user with lines of information in a neat menu. This technique is acceptable for returning values in a commandline, however, useless when printing data to a text file.
+This will test the functionality of option 3 _'Create a Troupe'_. The following instructions were followed:
 
-      The function needed to return a singular string. Thus, stage 4 and 5 were mostly rewritten in order to return a string instead of a bunch of console.log's. This was time consuming but was also a good lesson in fundementals. I learnt that its better to return strings and console.log the function when calling it. Instead of the function returning lines of console.log.
+1. Select option 2 from the main menu list by entering '2'
+2. Enter the Troupe name (must be between 3 and 30 characters)
+3. Enter the Troupes Minimum Duration (between 0.5 and 3)
+4. Enter the Troupes Maximum Duration (between 0.5 and 3 and greater than minimum duration)
+5. Enter Genre option 1, 2 or 3
 
-      
+| Input                                            |                                                                                Expected Output                                                                                 |                                                                                                                                                                         Output |
+| ------------------------------------------------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| '2' <br />'Bandy'<br />'1.5' <br />'3' <br />'2' |                                                                       'Troupe registered successfully.'                                                                        |                                                                                                                                              'Troupe registered successfully.' |
+| '2' <br />'Ba'                                   |                                          'Error: Invalid input. You've chosen 'Ba'<br />'Enter the Troupe Name (3 - 30 characters) :'                                          |                                                                                   'Error: Invalid input. You've chosen 'Ba'<br />'Enter the Troupe Name (3 - 30 characters) :' |
+| '2' <br />'Bandy'<br />'0'                       |                   'Error: Invalid input. Minimum duration must be number between 0.5 and 3'<br />'Enter the Troupes Minimum Duration (between 0.5 and 3) :'                    |                                      'Error: Invalid input. Minimum duration must be number between 0.5 and 3'<br />'Enter the Troupes Minimum Duration (between 0.5 and 3) :' |
+| '2' <br />'Bandy'<br />'1.5' <br />'0'           | 'Error: Invalid input. Maximum duration must be number between 0.5 and 3 and bigger than the minimum duration'<br />'Enter the Troupes Maximum Duration (between 0.5 and 3) :' | 'Error: Invalid input. Maximum duration must be number between 0.5 and 3 and bigger than the minimum duration'<br />'Enter the Troupes Maximum Duration (between 0.5 and 3) :' |
+| '2' <br />'Bandy'<br />'1.5' <br />'1'           | 'Error: Invalid input. Maximum duration must be number between 0.5 and 3 and bigger than the minimum duration'<br />'Enter the Troupes Maximum Duration (between 0.5 and 3) :' | 'Error: Invalid input. Maximum duration must be number between 0.5 and 3 and bigger than the minimum duration'<br />'Enter the Troupes Maximum Duration (between 0.5 and 3) :' |
+| '2' <br />'Bandy'<br />'1.5' <br />'3'<br />'6'  |                                                   'Error: Invalid input, You've entered '6'. Please enter either 1, 2 or 3.'                                                   |                                                                                                     'Error: Invalid input, You've entered '6'. Please enter either 1, 2 or 3.' |
+|                                                  |                                                                                                                                                                                |
+
+No modifications were required as the code worked as intended.
+<br /><br /><br />
+
+### Case 3 - Adding a Musician to a Troupe
+
+---
+
+<br />
+
+This will test the functionality of option 3 _'Adding a musician to a Troupe'_ when there are no Musicians or Troupes in the system. The following instructions were followed:
+
+1. Add a troupe or musician into the system first
+2. Select option 3 from the main menu list by entering '3'
+3. exit program and try again with different troupe/musician combo
+
+| Input                                                                                                 |                                        Expected Output                                         |                                                                                         Output |
+| ----------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------: | ---------------------------------------------------------------------------------------------: |
+| 'Add a troupe to the system with option 2'<br />'Add a musician to the system with option 1'<br />'3' |                                     'Enter Troupe name: '                                      |                                                                          'Enter Troupe name: ' |
+| 'Add a troupe to the system with option 2'<br />'3'                                                   |       'There are no Musicians registered in the system.'<br /> 'Press enter to continue'       |             'There are no Musicians registered in the system.'<br /> 'Press enter to continue' |
+| 'Add a musician to the system with option 1'<br />'3'                                                 |        'There are no Troupes registered in the system.'<br /> 'Press enter to continue'        |               'There are no Troupes registered in the system.'<br /> 'Press enter to continue' |
+| '3' <br /> (No Troupes and Musicians in the system)                                                   | 'There are no Musicians or Troupes registered in the system..'<br /> 'Press enter to continue' | 'There are no Musicians or Troupes registered in the system..'<br /> 'Press enter to continue' |
+|                                                                                                       |                                                                                                |
+
+No modifications were required as the code worked as intended.
